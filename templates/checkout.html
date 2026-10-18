@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ثبت سفارش | VPN IX</title>
+<style>
+body{margin:0;background:#080d19;color:white;font-family:Tahoma;padding:25px}
+main{max-width:450px;margin:40px auto;background:#111a2b;padding:25px;border-radius:16px}
+h1{color:#42a5ff;text-align:center}
+label{display:block;margin-top:18px}
+input,select{width:100%;padding:13px;margin-top:8px;box-sizing:border-box;border-radius:8px;border:1px solid #34435c;background:#080d19;color:white}
+button{width:100%;padding:14px;margin-top:24px;background:#1688ff;color:white;border:0;border-radius:8px;font-size:16px}
+</style>
+</head>
+<body>
+<main>
+<h1>ثبت سفارش VPN IX</h1>
+<form method="post">
+    {% if success %}
+<p style="color:#42ff9e;text-align:center">سفارش شما با موفقیت ثبت شد!</p>
+{% endif %}
+{% csrf_token %}
+<label>نام شما</label>
+<input type="text" name="name" required>
+<label>شماره تماس</label>
+<input type="tel" name="phone" required>
+<label>انتخاب پلن</label>
+<select name="plan" required>
+<option value="">انتخاب کنید</option>
+<option value="یک ماهه">یک ماهه</option>
+<option value="سه ماهه">سه ماهه</option>
+<option value="ویژه">ویژه</option>
+</select>
+<button type="submit">ثبت سفارش</button>
+</form>
+</main>
+</body>
+</html>
